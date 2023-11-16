@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -162,6 +163,24 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                     ),
                     FFButtonWidget(
                       onPressed: () async {
+                        if (!functions.checkPhoneNumber(
+                            _model.phoneFieldController.text)) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content: Text(
+                                'Номер телефона не верен ',
+                                style: TextStyle(
+                                  color:
+                                      FlutterFlowTheme.of(context).primaryText,
+                                ),
+                              ),
+                              duration: const Duration(milliseconds: 4000),
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).secondary,
+                            ),
+                          );
+                          return;
+                        }
                         final phoneNumberVal = _model.phoneFieldController.text;
                         if (phoneNumberVal.isEmpty ||
                             !phoneNumberVal.startsWith('+')) {
@@ -193,7 +212,10 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                             24.0, 0.0, 24.0, 0.0),
                         iconPadding:
                             const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: FlutterFlowTheme.of(context).primary1,
+                        color: functions.checkPhoneNumber(
+                                _model.phoneFieldController.text)
+                            ? FlutterFlowTheme.of(context).primary1
+                            : const Color(0x528087F8),
                         textStyle: FlutterFlowTheme.of(context).titleMedium,
                         elevation: 3.0,
                         borderSide: const BorderSide(

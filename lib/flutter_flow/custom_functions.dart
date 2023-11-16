@@ -12,11 +12,14 @@ import '/backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '/auth/firebase_auth/auth_util.dart';
 
-String checkPhoneNumber(String phone) {
-  // check if sting lenght is 12
-  if (phone.toString().length == 12) {
-    return 'Valid phone number';
-  } else {
-    return 'Invalid phone number';
-  }
+bool isImageEmpty(String image) {
+  return image.isEmpty;
+}
+
+bool checkPhoneNumber(String phone) {
+  return phone.length == 13;
+}
+
+bool stringIsEmpty(String str) {
+  return str.isEmpty;
 }

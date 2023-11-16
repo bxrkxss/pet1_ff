@@ -94,6 +94,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'StartPage',
           path: '/startPage',
           builder: (context, params) => const StartPageWidget(),
+        ),
+        FFRoute(
+          name: 'FillProfilePage',
+          path: '/fillProfilePage',
+          builder: (context, params) => const FillProfilePageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

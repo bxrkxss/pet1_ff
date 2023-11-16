@@ -51,7 +51,7 @@ class _SMSPageWidgetState extends State<SMSPageWidget> {
           : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
-        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        backgroundColor: Colors.white,
         appBar: AppBar(
           backgroundColor: const Color(0x004B39EF),
           automaticallyImplyLeading: true,
