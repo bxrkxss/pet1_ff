@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "90897806097",
+    "project_id": "yttt-9b530",
+    "storage_bucket": "yttt-9b530.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:90897806097:android:0b5ebe83d57d3a9c7592b0",
+        "android_client_info": {
+          "package_name": "com.mycompany.yttt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCE1g8-Wj0yap5tzCtmciIDZCdC5v_Ng-I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
