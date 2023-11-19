@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:pin_code_fields/pin_code_fields.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 's_m_s_page_model.dart';
 export 's_m_s_page_model.dart';
 
@@ -44,6 +45,8 @@ class _SMSPageWidgetState extends State<SMSPageWidget> {
         ),
       );
     }
+
+    context.watch<FFAppState>();
 
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
@@ -91,7 +94,7 @@ class _SMSPageWidgetState extends State<SMSPageWidget> {
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 30.0),
                       child: Text(
-                        'Введите код отправеный на указаный номер телефона  ',
+                        'Enter the code sent to the given phone number  ',
                         textAlign: TextAlign.center,
                         style: FlutterFlowTheme.of(context).displayMedium,
                       ),
@@ -163,7 +166,7 @@ class _SMSPageWidgetState extends State<SMSPageWidget> {
 
                         context.goNamedAuth('HomePage', context.mounted);
                       },
-                      text: 'Подтвердить',
+                      text: 'Confirm',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 46.0,

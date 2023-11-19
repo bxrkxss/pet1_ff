@@ -7,6 +7,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'start_page_model.dart';
 export 'start_page_model.dart';
 
@@ -77,6 +78,8 @@ class _StartPageWidgetState extends State<StartPageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -98,14 +101,14 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Войти',
+                      'Log in',
                       style: FlutterFlowTheme.of(context).displayLarge,
                     ),
                     Padding(
                       padding:
                           const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: Text(
-                        'Введите номер телефона ',
+                        'Write your number',
                         style: FlutterFlowTheme.of(context).displayMedium,
                       ),
                     ),
@@ -123,7 +126,7 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Label here...',
+                          labelText: 'phone number',
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
                           hintText: 'Ваш номер начиная с +380',
                           hintStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -204,7 +207,7 @@ class _StartPageWidgetState extends State<StartPageWidget> {
                           },
                         );
                       },
-                      text: 'Войти',
+                      text: 'Log in',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 46.0,

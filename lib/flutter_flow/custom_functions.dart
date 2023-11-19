@@ -23,3 +23,15 @@ bool checkPhoneNumber(String phone) {
 bool stringIsEmpty(String str) {
   return str.isEmpty;
 }
+
+String newCustomFunction(
+  bool isDriver,
+  bool isPassanger,
+) {
+  if (isDriver)
+    return "CREATE A TRIP";
+  else if (isPassanger)
+    return "JOIN A TRIP";
+  else
+    return "CHOOSE AN ACTION";
+}

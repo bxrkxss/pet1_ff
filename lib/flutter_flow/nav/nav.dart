@@ -99,6 +99,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'FillProfilePage',
           path: '/fillProfilePage',
           builder: (context, params) => const FillProfilePageWidget(),
+        ),
+        FFRoute(
+          name: 'CitySearchPage',
+          path: '/citySearchPage',
+          builder: (context, params) => const CitySearchPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -9,6 +9,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:provider/provider.dart';
 import 'fill_profile_page_model.dart';
 export 'fill_profile_page_model.dart';
 
@@ -51,6 +52,8 @@ class _FillProfilePageWidgetState extends State<FillProfilePageWidget> {
       );
     }
 
+    context.watch<FFAppState>();
+
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -72,7 +75,7 @@ class _FillProfilePageWidgetState extends State<FillProfilePageWidget> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Профиль ',
+                      'Profile',
                       style: FlutterFlowTheme.of(context).displayLarge,
                     ),
                     Align(
@@ -81,7 +84,7 @@ class _FillProfilePageWidgetState extends State<FillProfilePageWidget> {
                         padding: const EdgeInsetsDirectional.fromSTEB(
                             0.0, 10.0, 0.0, 20.0),
                         child: Text(
-                          'Добавте информацию о себе ',
+                          'Add information about you ',
                           style: FlutterFlowTheme.of(context).displayMedium,
                         ),
                       ),
@@ -197,9 +200,8 @@ class _FillProfilePageWidgetState extends State<FillProfilePageWidget> {
                         autofocus: true,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Label here...',
+                          labelText: 'Your Name ',
                           labelStyle: FlutterFlowTheme.of(context).labelMedium,
-                          hintText: 'Введите ваше имя...',
                           hintStyle: FlutterFlowTheme.of(context).displaySmall,
                           enabledBorder: UnderlineInputBorder(
                             borderSide: BorderSide(
@@ -266,7 +268,7 @@ class _FillProfilePageWidgetState extends State<FillProfilePageWidget> {
                           context.goNamed('HomePage');
                         }
                       },
-                      text: 'Сохранить  ',
+                      text: 'Save',
                       options: FFButtonOptions(
                         width: double.infinity,
                         height: 46.0,
